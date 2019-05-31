@@ -4,21 +4,20 @@
         <title>Redirecting...</title>
         <meta name="referrer" content="no-referrer" />
         <meta name="referrer" content="never" />    
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141099146-1"/>
-        <noscript>
-          <style>html{display:none;}</style>
-          <meta http-equiv="refresh" content="0.0;url=nojs/index.php">
-        </noscript>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141099146-1" />
     </head>
 
     <body>
-        <p id="text">redirecting...</p>
+        <noscript>Error: no javascript</noscript>
+        <p id="text"></p>
 
         <script type="text/javascript">
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-141099146-1');
+
+            document.getElementById("text").innerHTML = "redirecting...";
 
             function getParameterByName(name, url) {
                 if (!url) {
