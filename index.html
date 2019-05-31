@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<!-- ?url=[PUT URL HERE] -->
+    <head>
+        <title>Redirecting...</title>
+        <meta name="referrer" content="no-referrer" />
+        <meta name="referrer" content="never" />    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141099146-1"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-141099146-1');
+        </script>
+        <noscript>
+          <style>html{display:none;}</style>
+          <meta http-equiv="refresh" content="0.0;url=nojs/index.php">
+        </noscript>
+    </head>
+
+    <body>
+        <p>redirecting...</p>
+
+        <script type="text/javascript">
+            function getParameterByName(name, url) {
+                if (!url) {
+                    url = window.location.href;
+                }
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            var url = getParameterByName("url");
+            // Rick-rolling in case of wrong URL
+            window.location.href = url || "https://ga83.de";
+        </script>
+
+    <body>
+</html>
