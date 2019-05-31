@@ -15,7 +15,10 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'UA-141099146-1');
+            gtag('config', 'UA-141099146-1', {
+                'custom_map': {'dimension1': 'url'}
+            });
+
 
             document.getElementById("text").innerHTML = "redirecting...";
 
@@ -33,10 +36,10 @@
 
             url = getParameterByName("url");
             if (url) {
-                gtag('redirect', url);
+                gtag('event', 'redirect_event', {'url': url});
                 window.location.href = url;
             } else {
-                gtag('redirect', 'invalid');
+                gtag('event', 'redirect_event', {'url': 'invalid'});
                 document.getElementById("text").innerHTML = "Error: no valid parameter";
             }
         </script>
