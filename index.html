@@ -5,6 +5,14 @@
         <meta name="referrer" content="no-referrer" />
         <meta name="referrer" content="never" />    
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141099146-1"></script>
+        <script>  
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-141099146-1', {
+                'custom_map': {'dimension1': 'url'}
+            }); 
+        </script>  
     </head>
 
     <body>
@@ -12,14 +20,6 @@
         <p id="text"></p>
 
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-141099146-1', {
-                'custom_map': {'dimension1': 'url'}
-            });
-
-
             document.getElementById("text").innerHTML = "redirecting...";
 
             function getParameterByName(name, url) {
