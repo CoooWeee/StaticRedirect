@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
     <head>
         <title>Redirecting...</title>
-        <meta name="referrer" content="no-referrer" />
         <meta name="referrer" content="never" />    
 
         <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -53,8 +52,13 @@
 
             url = getParameterByName("url");
             if (url) {
-                gtag('event', 'redirect_event', {'redirect_url': url});
-                window.location.href = url;
+                try {
+                    new URL(url); // Will throw error for invalid URLs
+                    gtag('event', 'redirect_event', {'redirect_url': url});
+                    window.location.href = url;
+                } catch (_) {
+                    document.getElementById("text").innerHTML = "Error: invalid URL";
+                }
             } else {
                 document.getElementById("text").innerHTML = "Error: no valid parameter";
             }
